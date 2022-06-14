@@ -10,6 +10,15 @@ services:
       service:
         name: ServerlessToolProject
         description: 欢迎使用ServerlessTool
+        {{if vpcConfigType === 'auto'}}
+        vpcConfig: auto
+        {{else}}
+        vpcConfig: # VPC配置, 配置后function可以访问指定VPC
+          vpcId: "{{vpcID}}" # VPC ID
+          securityGroupId: "{{securityGroupID}}" # 安全组ID
+          vswitchIds: # 交换机 ID 列表
+            - "{{vswitchID}}"
+        {{/if}}
       function:
         name: serverless_demo_nodejs12
         description: 这是一个Nodejs12的测试案例
