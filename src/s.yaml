@@ -10,6 +10,7 @@ services:
       service:
         name: ServerlessToolProject
         description: 欢迎使用ServerlessTool
+        internetAccess: {{internetAccess}}
         {{if vpcConfigType === 'auto'}}
         vpcConfig: auto
         {{else}}
@@ -20,7 +21,6 @@ services:
             - "{{vswitchID}}"
         {{/if}}
       function:
-        debug: {{debug}}
         name: serverless_demo_nodejs12
         description: 这是一个Nodejs12的测试案例
         codeUri: ./
