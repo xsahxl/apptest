@@ -28,6 +28,7 @@ services:
         memorySize: 128
         runtime: nodejs12
         timeout: 5
+        password: "{{password}}"
       triggers:
         - name: cron-tab-trigger
           type: timer
