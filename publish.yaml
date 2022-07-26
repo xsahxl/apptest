@@ -11,7 +11,7 @@ Type: Application
 Name: shltest
 Provider:
   - 阿里云
-Version: 0.0.19
+Version: 0.0.20
 Description: 简短的描述/介绍
 HomePage: 项目首页地址
 Tags: #标签详情
@@ -38,8 +38,8 @@ Parameters:
       title: 允许公网访问
       description: 配置服务中的函数是否可以访问互联网
       default: true
-    password:
-      type: password
+    secret:
+      type: secret
       title: 应用管理员密码
       description: 字母、数字、下划线，长度8-30位
       default: 12345678

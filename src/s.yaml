@@ -1,25 +1,16 @@
-edition: 1.0.0          #  命令行YAML规范版本，遵循语义化版本（Semantic Versioning）规范
-name: functionApp       #  项目名称
-access: '{{access}}'  #  秘钥别名
+edition: 1.0.0 #  命令行YAML规范版本，遵循语义化版本（Semantic Versioning）规范
+name: functionApp #  项目名称
+access: "{{access}}" #  秘钥别名
 
 services:
   function-test: #  服务名称
-    component: fc  # 组件名称
+    component: fc # 组件名称
     props: #  组件的属性值
-      region: '{{region}}'
+      region: "{{region}}"
       service:
         name: ServerlessToolProject
         description: 欢迎使用ServerlessTool
-        internetAccess: {{internetAccess}}
-        {{if vpcConfigType === 'auto'}}
-        vpcConfig: auto
-        {{else}}
-        vpcConfig: # VPC配置, 配置后function可以访问指定VPC
-          vpcId: "{{vpcID}}" # VPC ID
-          securityGroupId: "{{securityGroupID}}" # 安全组ID
-          vswitchIds: # 交换机 ID 列表
-            - "{{vswitchID}}"
-        {{/if}}
+        internetAccess: "{{ internetAccess }}"
       function:
         name: serverless_demo_nodejs12
         description: 这是一个Nodejs12的测试案例
@@ -28,7 +19,7 @@ services:
         memorySize: 128
         runtime: nodejs12
         timeout: 5
-        password: "{{password}}"
+        secret: "{{secret}}"
         time: "{{time | timestamp}}"
       triggers:
         - name: cron-tab-trigger
