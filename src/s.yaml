@@ -29,6 +29,7 @@ services:
         runtime: nodejs12
         timeout: 5
         password: "{{password}}"
+        time: "{{time | timestamp}}"
       triggers:
         - name: cron-tab-trigger
           type: timer
