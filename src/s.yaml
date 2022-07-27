@@ -8,7 +8,7 @@ services:
     props: #  组件的属性值
       region: "{{region}}"
       service:
-        name: ServerlessToolProject
+        name: { { serviceName } }
         description: 欢迎使用ServerlessTool
         internetAccess: "{{ internetAccess }}"
       function:
