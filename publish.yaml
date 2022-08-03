@@ -47,7 +47,13 @@ Parameters:
     secret:
       type: secret
       title: 应用管理员密码
-      pattern: "^[a-zA-Z_][a-zA-Z0-9-_]{0,127}$"
+      pattern: "^[a-zA-Z0-9]{8,30}$"
+      description: 字母、数字、下划线，长度8-30位
+      default: 12345678
+    secret2:
+      type: secret
+      title: secret
+      pattern: "^[a-zA-Z0-9]{8,30}$"
       description: 字母、数字、下划线，长度8-30位
       default: 12345678
     time:
