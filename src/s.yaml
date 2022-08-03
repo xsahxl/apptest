@@ -19,15 +19,17 @@ services:
         memorySize: 128
         runtime: nodejs12
         timeout: 5
-        secret: "{{secret}}"
-        time: "{{time | timestamp}}"
-      triggers:
-        - name: cron-tab-trigger
-          type: timer
-          config:
-            payload: |
-              {
-                "city": "{{city}}",
-              }
-            cronExpression: "@every 1m"
-            enable: true
+        environmentVariables:
+          secret: "{{secret}}"
+          secret2: "{{secret2}}"
+        # time: "{{time | timestamp}}"
+      # triggers:
+      #   - name: cron-tab-trigger
+      #     type: timer
+      #     config:
+      #       payload: |
+      #         {
+      #           "city": "{{city}}",
+      #         }
+      #       cronExpression: "@every 1m"
+      #       enable: true
