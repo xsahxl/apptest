@@ -1,14 +1,23 @@
+# 规范文档参考:
+# 中文：https://github.com/Serverless-Devs/Serverless-Devs/blob/master/spec/zh/0.0.2/serverless_package_model/package_model.md#应用模型规范
+# English: https://github.com/Serverless-Devs/Serverless-Devs/blob/master/spec/en/0.0.2/serverless_package_model/package_model.md#Application-model-specification
+# --------------
+# Package 开发发布最佳实践:
+#   - [社区讨论 #62](https://github.com/Serverless-Devs/Serverless-Devs/discussions/62);
+#   - [社区讨论 #407](https://github.com/Serverless-Devs/Serverless-Devs/discussions/407);
+#   - [社区讨论 #439](https://github.com/Serverless-Devs/Serverless-Devs/discussions/439);
+
 Type: Application
 Name: shltest
 Provider:
   - 阿里云
-Version: 0.0.30
+Version: 0.0.31
 Description: 简短的描述/介绍
 HomePage: 项目首页地址
 Tags: #标签详情
   - 部署函数
   - 部署组件
-Category: 新手入门
+Category: 新手入门 # 基础云服务/Web框架/Web应用/人工智能/音视频处理/图文处理/监控告警/大数据/IoT/新手入门/其他
 Parameters:
   type: object
   additionalProperties: false # 不允许增加其他属性
@@ -47,3 +56,39 @@ Parameters:
       pattern: "^[a-zA-Z0-9]{8,30}$"
       description: 字母、数字、下划线，长度8-30位
       default: secretsecret2
+    # time:
+    #   type: string
+    #   title: 时间
+    #   description: 时间戳
+    #   default: 10
+    # longtitle:
+    #   type: string
+    #   title: longlonglonglonglonglonglonglonglonglongtitle
+    #   description: 很长很长的描述
+    # city:
+    #   title: 城市
+    #   type: string
+    #   default: 杭州
+    #   description: 创建应用所在的城市
+    # vpcConfigType:
+    #   title: VPC网络配置
+    #   type: string
+    #   description: 配置服务中函数使用的网络，例如配置函数是否可以访问公网，是否可以访问 VPC 中的资源等。
+    #   enum:
+    #     - auto
+    #     - 自定义配置
+    # vpcID:
+    #   title: vpcID
+    #   type: string
+    #   default: "xx-vpcID"
+    #   description: vpcID
+    # securityGroupID:
+    #   title: securityGroupID
+    #   type: string
+    #   default: "xx-securityGroupID"
+    #   description: securityGroupID
+    # vswitchID:
+    #   title: vswitchID
+    #   type: string
+    #   default: "xx-vswitchID"
+    #   description: vswitchID

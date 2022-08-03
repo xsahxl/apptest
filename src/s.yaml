@@ -10,7 +10,7 @@ services:
       service:
         name: "{{ serviceName }}"
         description: 欢迎使用ServerlessTool
-        internetAccess: "{{ internetAccess }}"
+        internetAccess: {{ internetAccess }}
       function:
         name: serverless_demo_nodejs12
         description: 这是一个Nodejs12的测试案例
