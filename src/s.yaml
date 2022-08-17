@@ -23,6 +23,24 @@ services:
           secret: "{{secret}}"
           secret2: "{{secret2}}"
         time: "{{time}}"
+      triggers:
+        - name: EBRocketMQ
+          type: eventbridge
+          config:
+            triggerEnable: true
+            asyncInvocationType: false
+            eventRuleFilterPattern: "{}"
+            eventSourceConfig:
+              eventSourceType: RocketMQ
+              eventSourceParameters:
+                sourceRocketMQParameters:
+                  RegionId: "{{ region}}"
+                  InstanceId: "{{ InstanceId}}"
+                  Tag: "{{ Tag }}"
+                  Topic: "{{ Topic }}"
+                  Offset: "{{ Offset }}"
+                  Timestamp: {{ Timestamp }} #只有在offset为CONSUME_FROM_TIMESTAMP时，该参数有效，其余情况下任意设置
+                  GroupID: "{{ GroupID}}"
       # triggers:
       #   - name: cron-tab-trigger
       #     type: timer
