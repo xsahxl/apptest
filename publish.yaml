@@ -11,7 +11,7 @@ Type: Application
 Name: shltest
 Provider:
   - 阿里云
-Version: 0.0.39
+Version: 0.0.40
 Description: 简短的描述/介绍
 HomePage: 项目首页地址
 Tags: #标签详情
@@ -50,22 +50,16 @@ Parameters:
       pattern: "^[a-zA-Z0-9]{8,30}$"
       description: 字母、数字、下划线，长度8-30位
       default: secretsecret1
-    secret2:
-      type: secret
-      title: secret
-      pattern: "^[a-zA-Z0-9]{8,30}$"
-      description: 字母、数字、下划线，长度8-30位
-      default: secretsecret2
-    acrRegistry:
-      title: 镜像仓库
-      type: string
-      examples:
-        [
-          "registry.cn-hangzhou.aliyuncs.com/fc-demo/custom-springboot-function:v0.1",
-        ]
-      description: 镜像仓库地址，需要在 https://cr.console.aliyun.com/ 中开通服务、创建仓库以及设置访问凭证
-      x-acr:
-        type: "select"
+    # acrRegistry:
+    #   title: 镜像仓库
+    #   type: string
+    #   examples:
+    #     [
+    #       "registry.cn-hangzhou.aliyuncs.com/fc-demo/custom-springboot-function:v0.1",
+    #     ]
+    #   description: 镜像仓库地址，需要在 https://cr.console.aliyun.com/ 中开通服务、创建仓库以及设置访问凭证
+    #   x-acr:
+    #     type: "select"
     Timestamp:
       title: 时间戳
       type: string
@@ -80,25 +74,25 @@ Parameters:
     #   type: string
     #   default: 杭州
     #   description: 创建应用所在的城市
-    # vpcConfigType:
-    #   title: VPC网络配置
-    #   type: string
-    #   description: 配置服务中函数使用的网络，例如配置函数是否可以访问公网，是否可以访问 VPC 中的资源等。
-    #   enum:
-    #     - auto
-    #     - 自定义配置
-    # vpcID:
-    #   title: vpcID
-    #   type: string
-    #   default: "xx-vpcID"
-    #   description: vpcID
-    # securityGroupID:
-    #   title: securityGroupID
-    #   type: string
-    #   default: "xx-securityGroupID"
-    #   description: securityGroupID
-    # vswitchID:
-    #   title: vswitchID
-    #   type: string
-    #   default: "xx-vswitchID"
-    #   description: vswitchID
+    vpcConfigType:
+      title: VPC网络配置
+      type: string
+      description: 配置服务中函数使用的网络，例如配置函数是否可以访问公网，是否可以访问 VPC 中的资源等。
+      enum:
+        - auto
+        - 自定义配置
+    vpcID:
+      title: vpcID
+      type: string
+      default: "xx-vpcID"
+      description: vpcID
+    securityGroupID:
+      title: securityGroupID
+      type: string
+      default: "xx-securityGroupID"
+      description: securityGroupID
+    vswitchID:
+      title: vswitchID
+      type: string
+      default: "xx-vswitchID"
+      description: vswitchID
