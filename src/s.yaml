@@ -31,7 +31,7 @@ services:
         environmentVariables:
           secret: "{{secret}}"
           secret2: "{{secret2}}"
-        time: "{{time}}"
+        time: "{{time | timestamp}}"
       triggers:
         - name: EBRocketMQ
           type: eventbridge
