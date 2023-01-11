@@ -56,7 +56,10 @@
 
 | 服务/业务 |  权限 |  备注  |
 | --- |  --- |   --- |
-| 函数计算 | 函数计算全部权限 |  部署函数 |
+| 函数计算 | AliyunFCFullAccess |  fc xx |
+| 硬盘挂载 | AliyunNASFullAccess |  nas xx |
+| VPC | AliyunVPCFullAccess |  vpc xx |
+| 其它 | AliyunECSFullAccess |  ecs xx |
 
 </auth>
 
