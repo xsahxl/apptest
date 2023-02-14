@@ -70,9 +70,6 @@
 | 服务/业务 |  权限 |  备注  |
 | --- |  --- |   --- |
 | 函数计算 | AliyunFCFullAccess |  需要创建函数处理核心业务逻辑 |
-| 硬盘挂载 | AliyunNASFullAccess |  为什么需要该权限 |
-| VPC | AliyunVPCFullAccess |  为什么需要该权限 |
-| 其它 | AliyunECSFullAccess |  为什么需要该权限xxx |
 
 </auth>
 

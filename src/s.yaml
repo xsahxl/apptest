@@ -24,6 +24,7 @@ services:
           secret: "{{secret}}"
           secret2: "{{secret2}}"
         jsonString: "{{jsonString}}"
+        otsInstanceName: "{{otsInstanceName}}"
       triggers:
         - name: EBRocketMQ
           type: eventbridge
@@ -40,7 +41,7 @@ services:
                   Tag: "{{ Tag }}"
                   Topic: "{{ Topic }}"
                   Offset: "{{ Offset }}"
-                  Timestamp: {{ Timestamp }} #只有在offset为CONSUME_FROM_TIMESTAMP时，该参数有效，其余情况下任意设置
+                  Timestamp: { { Timestamp } } #只有在offset为CONSUME_FROM_TIMESTAMP时，该参数有效，其余情况下任意设置
                   GroupID: "{{ GroupID}}"
       # triggers:
       #   - name: cron-tab-trigger
