@@ -23,6 +23,7 @@ async function postInit(inputObj) {
   return {
     ...inputObj.parameters,
     otsInstanceName: `new-${inputObj.parameters.otsInstanceName}`,
+    secret2: `new-${inputObj.parameters.secret2}`,
   };
 }
 
